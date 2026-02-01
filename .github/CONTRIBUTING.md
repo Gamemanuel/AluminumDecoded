@@ -7,19 +7,19 @@ Thank you for your interest in contributing to AluminumDecoded! This document pr
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
-- [Getting Started](#-getting-started)
-- [Development Workflow](#-development-workflow)
-- [Pull Request Guidelines](#-pull-request-guidelines)
-- [Reporting Issues](#-reporting-issues)
-- [Release Process](#-release-process)
-- [Code Standards](#-code-standards)
-- [Resources](#-resources)
+- [Getting Started](#getting-started)
+- [Development Workflow](#development-workflow)
+- [Pull Request Guidelines](#pull-request-guidelines)
+- [Reporting Issues](#reporting-issues)
+- [Release Process](#release-process)
+- [Code Standards](#code-standards)
+- [Resources](#resources)
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -32,7 +32,7 @@ Before contributing, make sure you have:
 - [ ] Familiarity with FTC SDK concepts
 
 <details>
-<summary>📚 New to Git? Click here for resources</summary>
+<summary>New to Git? Click here for resources</summary>
 
 If you're new to Git and version control, check out these resources:
 
@@ -61,7 +61,7 @@ If you're new to Git and version control, check out these resources:
 
 ---
 
-## 🔄 Development Workflow
+## Development Workflow
 
 ### Branching Strategy
 
@@ -105,7 +105,7 @@ Use descriptive branch names that indicate the purpose:
 
 ---
 
-## 🔀 Pull Request Guidelines
+## Pull Request Guidelines
 
 > [!IMPORTANT]
 > **Read this carefully if you're new to pull requests!**
@@ -114,11 +114,11 @@ Use descriptive branch names that indicate the purpose:
 
 Make sure your PR:
 
-- ✅ Has a clear, descriptive title
-- ✅ Includes a detailed description of changes
-- ✅ References any related issues
-- ✅ Has been tested on the robot (for code changes)
-- ✅ Doesn't include unnecessary files (build artifacts, IDE configs, etc.)
+- Has a clear, descriptive title
+- Includes a detailed description of changes
+- References any related issues
+- Has been tested on the robot (for code changes)
+- Doesn't include unnecessary files (build artifacts, IDE configs, etc.)
 
 ### Creating a Pull Request
 
@@ -164,15 +164,15 @@ Make sure your PR:
 
 ---
 
-## 🐛 Reporting Issues
+## Reporting Issues
 
 Found a bug? Have a feature request? Here's how to report it:
 
 ### Before Creating an Issue
 
-- 🔍 **Search existing issues** to avoid duplicates
-- 📖 **Check documentation** to ensure it's actually a bug
-- 🧪 **Try to reproduce** the issue consistently
+- **Search existing issues** to avoid duplicates
+- **Check documentation** to ensure it's actually a bug
+- **Try to reproduce** the issue consistently
 
 ### Creating a Good Issue
 
@@ -225,7 +225,7 @@ What other approaches could work?
 
 ---
 
-## 📦 Release Process
+## Release Process
 
 ### When to Create a Release
 
@@ -245,26 +245,26 @@ Follow semantic versioning: `vMAJOR.MINOR.PATCH` (e.g., `v1.2.0`)
 ```markdown
 # Release v1.2.0 (2024-12-15)
 
-## 🎉 New Features
+## New Features
 - Added improved autonomous path following
 - Implemented new scoring mechanism for high basket
 
-## 🐛 Bug Fixes
+## Bug Fixes
 - Fixed drivetrain drift issue (#12)
 - Corrected IMU initialization bug (#15)
 
-## 🔧 Improvements
+## Improvements
 - Optimized TeleOp control responsiveness
 - Updated motor power scaling for better precision
 
-## 📝 Documentation
+## Documentation
 - Updated README with new setup instructions
 - Added inline comments to complex algorithms
 
-## ⚠️ Breaking Changes
+## Breaking Changes
 - Changed motor configuration - requires re-mapping on Driver Station
 
-## 👥 Contributors
+## Contributors
 @username1, @username2, @username3
 ```
 
@@ -279,7 +279,7 @@ Follow semantic versioning: `vMAJOR.MINOR.PATCH` (e.g., `v1.2.0`)
 
 ---
 
-## 💻 Code Standards
+## Code Standards
 
 ### Java Code Style
 
@@ -331,7 +331,7 @@ TeamCode/
 
 ---
 
-## 📚 Resources
+## Resources
 
 ### Team Resources
 
@@ -353,7 +353,7 @@ TeamCode/
 
 ---
 
-## 📞 Getting Help
+## Getting Help
 
 Having trouble? Here's how to get help:
 
@@ -364,7 +364,7 @@ Having trouble? Here's how to get help:
 
 ---
 
-## 📄 License
+## License
 
 This project is dual-licensed:
 
@@ -374,4 +374,4 @@ This project is dual-licensed:
 ---
 
 > [!NOTE]
-> **Remember:** When in doubt, ask! We're all learning together. Don't be afraid to make mistakes – that's how we improve! 🚀
+> **Remember:** When in doubt, ask! We're all learning together. Don't be afraid to make mistakes – that's how we improve!
