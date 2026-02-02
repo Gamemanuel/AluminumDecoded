@@ -69,13 +69,13 @@ public abstract class Shoot3CMDClose extends LinearOpMode {
         // PHASE 1: Drive to Position
         // =================================================================
         while (ll.getDistanceInches() > TARGET_DISTANCE_INCHES && opModeIsActive()) {
-            drivetrain.Drive(DRIVE_POWER, 0);
+            drivetrain.arcadeDrive(DRIVE_POWER, 0);
             runSubsystems(); // Updates PID and Vision
             telemetry.addData("Phase", "1. Driving");
             telemetry.addData("Distance", ll.getDistanceInches());
             telemetry.update();
         }
-        drivetrain.Drive(0, 0);
+        drivetrain.arcadeDrive(0, 0);
 
         // =================================================================
         // PHASE 2: Wait for Speed
@@ -149,16 +149,16 @@ public abstract class Shoot3CMDClose extends LinearOpMode {
         intake.floop.setPosition(FLIPPER_STOW_POS);
         shooter.setTargetVelocity(0);
         turretSubsystem.setPower(0);
-        drivetrain.Drive(0,0);
+        drivetrain.arcadeDrive(0,0);
 
         while (ll.getDistanceInches() < 69 && opModeIsActive() && ll.getDistanceInches() != 1000) {
-            drivetrain.Drive(DRIVE_POWER, 0);
+            drivetrain.arcadeDrive(DRIVE_POWER, 0);
             runSubsystems(); // Updates PID and Vision
             telemetry.addData("Phase", "1. Driving");
             telemetry.addData("Distance", ll.getDistanceInches());
             telemetry.update();
         }
-        drivetrain.Drive(0, 0);
+        drivetrain.arcadeDrive(0, 0);
     }
 
     /**

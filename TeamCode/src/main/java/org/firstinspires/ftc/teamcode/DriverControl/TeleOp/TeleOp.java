@@ -50,7 +50,7 @@ public abstract class TeleOp extends OpMode {
         // run the ll loop every loop
         ll.periodic();
         // 1. DRIVETRAIN
-        drivetrain.Drive(gamepad1.left_stick_y, gamepad1.right_stick_x);
+        drivetrain.arcadeDrive(gamepad1.left_stick_y, gamepad1.right_stick_x);
 
         // 2. INTAKE
         intake.front.setPower(gamepad2.left_trigger - gamepad2.right_trigger);
