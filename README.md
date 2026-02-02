@@ -18,7 +18,7 @@ Once you have downloaded and uncompressed (if needed) your folder, you can use A
 > [!TIP]
 > ## Git Functions that are nice
 > 
-> Remove uncommited changes
+> Remove uncommitted changes
 > ```bash
 > git clear
 > ```
