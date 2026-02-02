@@ -28,10 +28,12 @@ Once you have downloaded and uncompressed (if needed) your folder, you can use A
 > git clean -fd
 > ```
 
-## Licences
-there are 2 licences to this project.
+## License
 
-[MIT](https://github.com/Gamemanuel/AluminumDecoded/blob/main/LICENSE) 
+This project is dual-licensed:
+
+- **TeamCode folder:** [MIT License](https://github.com/Gamemanuel/AluminumDecoded/blob/main/LICENSE)
+- **Root directory (FTC SDK):** [BSD 3-Clause License](https://github.com/Gamemanuel/AluminumDecoded/blob/main/LICENCE)
 * The files in the folder [TeamCode](https://github.com/Gamemanuel/AluminumDecoded/tree/main/TeamCode/src/main/java/org/firstinspires/ftc/teamcode) are licenced under MIT
 
 [BSD 3-Clause Clear License](https://github.com/Gamemanuel/AluminumDecoded/blob/main/LICENCE)
