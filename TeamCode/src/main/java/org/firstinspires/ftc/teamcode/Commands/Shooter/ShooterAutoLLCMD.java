@@ -1,8 +1,8 @@
 package org.firstinspires.ftc.teamcode.Commands.Shooter;
 
-import org.firstinspires.ftc.teamcode.solversLibComponents.InterpLUT.InterpLUT;
-import org.firstinspires.ftc.teamcode.subsystems.LLSubsystem;
-import org.firstinspires.ftc.teamcode.subsystems.ShooterSubsystem;
+import org.firstinspires.ftc.teamcode.Utils.SolversLib.InterpLUT.InterpLUT;
+import org.firstinspires.ftc.teamcode.Subsystems.LLSubsystem;
+import org.firstinspires.ftc.teamcode.Subsystems.ShooterSubsystem;
 
 public class ShooterAutoLLCMD {
 

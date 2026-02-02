@@ -1,7 +1,7 @@
 package org.firstinspires.ftc.teamcode.Utils.SolversLib.PIDFController;
 
 import com.qualcomm.robotcore.hardware.PIDFCoefficients;
-import org.firstinspires.ftc.teamcode.solversLibComponents.Controller.Controller;
+import org.firstinspires.ftc.teamcode.Utils.SolversLib.Controller.Controller;
 
 /**
  * This is a PID controller (https://en.wikipedia.org/wiki/PID_controller)
@@ -161,5 +161,4 @@ public class PIDFController extends Controller {
     public double getF() {
         return kF;
     }
-
 }

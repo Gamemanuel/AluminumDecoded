@@ -1,9 +1,9 @@
 package org.firstinspires.ftc.teamcode.Commands.Turret;
 
 import com.qualcomm.hardware.limelightvision.LLResult;
-import org.firstinspires.ftc.teamcode.Alliance;
-import org.firstinspires.ftc.teamcode.subsystems.LLSubsystem;
-import org.firstinspires.ftc.teamcode.subsystems.TurretSubsystem;
+import org.firstinspires.ftc.teamcode.Utils.Alliance;
+import org.firstinspires.ftc.teamcode.Subsystems.LLSubsystem;
+import org.firstinspires.ftc.teamcode.Subsystems.TurretSubsystem;
 
 public class TurretAutoLLCMD {
 
