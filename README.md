@@ -34,7 +34,3 @@ This project is dual-licensed:
 
 - **TeamCode folder:** [MIT License](https://github.com/Gamemanuel/AluminumDecoded/blob/main/LICENSE)
 - **Root directory (FTC SDK):** [BSD 3-Clause License](https://github.com/Gamemanuel/AluminumDecoded/blob/main/LICENCE)
-* The files in the folder [TeamCode](https://github.com/Gamemanuel/AluminumDecoded/tree/main/TeamCode/src/main/java/org/firstinspires/ftc/teamcode) are licenced under MIT
-
-[BSD 3-Clause Clear License](https://github.com/Gamemanuel/AluminumDecoded/blob/main/LICENCE)
-* The files in the root directory excluding [TeamCode](https://github.com/Gamemanuel/AluminumDecoded/tree/main/TeamCode/src/main/java/org/firstinspires/ftc/teamcode) (this is also known as the app files) is licenced under the BSD 3-Clause Clear License
