@@ -68,7 +68,7 @@ public class ShooterSubsystem {
     public void setTargetVelocity(double target){
         TargetVelocity = -target;
         // Update the PID setpoint immediately
-        shooterPIDF.setSetPoint(target);
+        shooterPIDF.setSetPoint(-target);
     }
 
     public double getTargetVelocity(){
