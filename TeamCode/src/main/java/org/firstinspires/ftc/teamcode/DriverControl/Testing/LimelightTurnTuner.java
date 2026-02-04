@@ -2,12 +2,11 @@ package org.firstinspires.ftc.teamcode.DriverControl.Testing;
 
 import com.acmerobotics.dashboard.FtcDashboard;
 import com.acmerobotics.dashboard.config.Config;
-import com.acmerobotics.dashboard.telemetry.MultipleTelemetry;
+import org.firstinspires.ftc.teamcode.Utils.Robot;
+import org.firstinspires.ftc.teamcode.Utils.Alliance;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import org.firstinspires.ftc.teamcode.subsystems.Drivetrain;
-import org.firstinspires.ftc.teamcode.subsystems.LLSubsystem;
-import org.firstinspires.ftc.teamcode.Alliance; // Assuming you have an Alliance enum
+import com.acmerobotics.dashboard.telemetry.MultipleTelemetry;
 
 @Config // Allows real-time tuning via FTC Dashboard
 @TeleOp(name = "Limelight Turn Tuner", group = "Tuning")
@@ -23,14 +22,11 @@ public class LimelightTurnTuner extends OpMode {
     // Allowed error in degrees (when to stop).
     public static double TOLERANCE = 1.5;
 
-    // Subsystems
-    private Drivetrain drivetrain;
-    private LLSubsystem ll;
-
     // Control Variables
     private boolean isTurning = false;
     private long turnStartTime;
     private static final long TIMEOUT_MS = 3000; // 3 second safety timeout
+    Robot robot;
 
     @Override
     public void init() {
@@ -38,10 +34,7 @@ public class LimelightTurnTuner extends OpMode {
         telemetry = new MultipleTelemetry(telemetry, FtcDashboard.getInstance().getTelemetry());
 
         // Initialize Subsystems
-        drivetrain = new Drivetrain(hardwareMap);
-        // Note: I'm assuming Alliance.RED here, but you may need to pass this
-        // to your LLSubsystem if it relies on it.
-        ll = new LLSubsystem(hardwareMap, Alliance.RED);
+        robot = new Robot(hardwareMap, Alliance.RED);
 
         telemetry.addData("Status", "Ready. Press A to turn.");
     }
@@ -49,7 +42,7 @@ public class LimelightTurnTuner extends OpMode {
     @Override
     public void loop() {
         // Always run Limelight periodic to get fresh data
-        ll.periodic();
+        robot.ll.periodic();
 
         // -------------------------------------------------------------
         // I. START TURNING COMMAND
@@ -63,15 +56,15 @@ public class LimelightTurnTuner extends OpMode {
         // II. TURNING LOGIC
         // -------------------------------------------------------------
         if (isTurning) {
-            double tx = ll.getAllianceTX();
+            double tx = robot.ll.getAllianceTX();
 
             // 1. Check Exit Conditions
-            boolean isCentered = (Math.abs(tx) < TOLERANCE && ll.isTargetFound());
+            boolean isCentered = (Math.abs(tx) < TOLERANCE && robot.ll.isTargetFound());
             boolean isTimedOut = (System.currentTimeMillis() - turnStartTime > TIMEOUT_MS);
 
             if (isCentered || isTimedOut) {
                 // STOP
-                drivetrain.Drive(0, 0);
+                robot.drivetrain.arcadeDrive(0, 0);
                 isTurning = false;
                 telemetry.addData("Turn Result", isCentered ? "SUCCESS" : "TIMEOUT");
             } else {
@@ -85,11 +78,11 @@ public class LimelightTurnTuner extends OpMode {
                 }
 
                 // 4. Execute Turn
-                drivetrain.Drive(0, turnPower);
+                robot.drivetrain.arcadeDrive(0, turnPower);
             }
         } else {
             // Manual control when not turning
-            drivetrain.Drive(gamepad1.left_stick_y, gamepad1.right_stick_x);
+            robot.drivetrain.arcadeDrive(gamepad1.left_stick_y, gamepad1.right_stick_x);
         }
 
         // -------------------------------------------------------------
@@ -120,7 +113,7 @@ public class LimelightTurnTuner extends OpMode {
         telemetry.addData("Instructions", "DPAD Up/Down: Tune KP | DPAD Left/Right: Tune MinPower | A: START TURN");
 
 //        telemetry.addData("Limelight Target Found", ll.isTargetFound());
-        telemetry.addData("Limelight TX (Error)", ll.getAllianceTX());
+        telemetry.addData("Limelight TX (Error)", robot.ll.getAllianceTX());
 //
 //        telemetry.addData("Current Turn Power", drivetrain.getLastTurnPower()); // Assuming you have a getter for power
 
