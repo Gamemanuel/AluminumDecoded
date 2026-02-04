@@ -6,7 +6,7 @@ import org.firstinspires.ftc.teamcode.Utils.SolversLib.InterpLUT.InterpLUT;
 
 public class ShooterAutoLLCMD {
 
-    private static InterpLUT VelocityLUT = new InterpLUT();
+    private static final InterpLUT VelocityLUT = new InterpLUT();
 
     static {
         // Format: VelocityLUT.add(Distance_Inches, Target_Velocity);
