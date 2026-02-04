@@ -1,9 +1,7 @@
 package org.firstinspires.ftc.teamcode.Commands.Shooter;
 
-
-import org.firstinspires.ftc.teamcode.Subsystems.ShooterSubsystem;
-
 import java.util.function.DoubleSupplier;
+import org.firstinspires.ftc.teamcode.Subsystems.ShooterSubsystem;
 
 public class ShooterShootCmd {
 
