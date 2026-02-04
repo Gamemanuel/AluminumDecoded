@@ -2,18 +2,10 @@ package org.firstinspires.ftc.teamcode.Auto.Shoot3CMDClose;
 
 import com.acmerobotics.dashboard.FtcDashboard;
 import com.acmerobotics.dashboard.config.Config;
-import com.acmerobotics.dashboard.telemetry.MultipleTelemetry;
-import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-
-import org.firstinspires.ftc.teamcode.Utils.Alliance;
-import org.firstinspires.ftc.teamcode.Commands.Shooter.ShooterAutoLLCMD;
-import org.firstinspires.ftc.teamcode.Commands.Turret.TurretAutoLLCMD;
-import org.firstinspires.ftc.teamcode.Subsystems.Drivetrain;
-import org.firstinspires.ftc.teamcode.Subsystems.Intake;
-import org.firstinspires.ftc.teamcode.Subsystems.LLSubsystem;
-import org.firstinspires.ftc.teamcode.Subsystems.ShooterSubsystem;
-import org.firstinspires.ftc.teamcode.Subsystems.TurretSubsystem;
 import org.firstinspires.ftc.teamcode.Utils.Robot;
+import org.firstinspires.ftc.teamcode.Utils.Alliance;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.acmerobotics.dashboard.telemetry.MultipleTelemetry;
 
 @Config
 public abstract class Shoot3CMDClose extends LinearOpMode {
