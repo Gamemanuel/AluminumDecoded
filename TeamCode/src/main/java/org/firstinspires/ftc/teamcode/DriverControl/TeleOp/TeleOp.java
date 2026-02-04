@@ -22,7 +22,7 @@ public abstract class TeleOp extends OpMode {
     }
 
     public void init() {
-        // LINK DASHBOARD AND DRIVER STATION TELEMETRY
+        // link telemetry
         telemetry = new MultipleTelemetry(telemetry, FtcDashboard.getInstance().getTelemetry());
 
         // call the subsystems
@@ -54,7 +54,7 @@ public abstract class TeleOp extends OpMode {
         // Shooter Logic
 
         // Toggle Manual override with Y button on gamepad2
-        if (gamepad2.y && !lastYButtonState); {
+        if (gamepad2.y && !lastYButtonState) {
             shooterManualOverride = !shooterManualOverride;
         }
         lastYButtonState = gamepad2.y;
@@ -73,7 +73,7 @@ public abstract class TeleOp extends OpMode {
             robot.shooter.periodic();
         }
 
-        // 5. TELEMETRY
+        // Telemetry
         telemetry.addData("Shooter Mode", shooterManualOverride ? "MANUAL" : "AUTO");
         telemetry.addData("Shooter Target", robot.shooter.getTargetVelocity());
         telemetry.addData("Shooter Actual", robot.shooter.shooter.getVelocity());
