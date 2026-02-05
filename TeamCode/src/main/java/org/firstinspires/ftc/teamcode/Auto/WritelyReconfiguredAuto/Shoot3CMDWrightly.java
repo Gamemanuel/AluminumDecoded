@@ -27,9 +27,6 @@ public abstract class Shoot3CMDWrightly extends LinearOpMode {
     public static final double TURRET_TOLERANCE = 1.5;
     public static final double TURRET_SHOOT_SPEED = 0.2;
 
-    // --- NEW: FLAG TO CONTROL AUTOMATIC SHOOTER COMMAND ---
-    private boolean runAutoShooterCommand = true;
-
     private final Alliance alliance;
     Robot robot;
 
@@ -47,9 +44,7 @@ public abstract class Shoot3CMDWrightly extends LinearOpMode {
 
         if (isStopRequested()) return;
 
-        // =================================================================
-        // PHASE 1: Drive to Position
-        // =================================================================
+        // Drive to Position
         while (robot.ll.getDistanceInches() > TARGET_DISTANCE_INCHES && opModeIsActive()) {
             robot.drivetrain.arcadeDrive(DRIVE_POWER, 0);
             runSubsystems(); // Updates PID and Vision
@@ -61,12 +56,8 @@ public abstract class Shoot3CMDWrightly extends LinearOpMode {
 
         // Wait for speed.
 
-        // --- NEW/MODIFIED LINES ---
-        // 1. Set the fixed target velocity directly
+        // Set the fixed target velocity directly
         robot.shooter.setTargetVelocity(FIXED_SHOOTER_VELOCITY);
-
-        // 2. DISABLE the automatic command so it doesn't overwrite the fixed speed
-        runAutoShooterCommand = false;
 
         long timeout = 8000;
         long startTime = System.currentTimeMillis();
@@ -79,17 +70,14 @@ public abstract class Shoot3CMDWrightly extends LinearOpMode {
             if (Math.abs(target - actual) <= SHOOTER_TOLERANCE) {
                 break;
             }
-            telemetry.addData("Phase", "2. Spooling Up (FIXED VELOCITY)");
+            telemetry.addData("Phase", "Spooling Up");
             telemetry.addData("Target", target);
             telemetry.addData("Actual", actual);
             telemetry.addData("Err", target - actual);
             telemetry.update();
         }
 
-        // =================================================================
-        // PHASE 3: Shoot 3 Balls
-        // =================================================================
-        // Removed safeWait(6000) as it seems to be an unnecessary long delay
+        // Shoot 3 Balls
         safeWait(6000);
         safeWait(PUSH_DURATION_MS);
         if (opModeIsActive()) {
@@ -100,7 +88,7 @@ public abstract class Shoot3CMDWrightly extends LinearOpMode {
                 telemetry.addData("Phase", "3. Shooting Ball " + i);
                 telemetry.update();
 
-                // --- FIRE THE BALL ---
+                // FIRE THE BALL
                 if (i <= 2) {
                     safeWait(PUSH_DURATION_MS);
                 } else {
@@ -109,7 +97,7 @@ public abstract class Shoot3CMDWrightly extends LinearOpMode {
                     robot.intake.floop.setPosition(FLIPPER_STOW_POS);
                 }
 
-                // --- RECOVERY ---
+                // RECOVERY
                 robot.intake.front.setPower(0);
                 safeWait(SHOT_DELAY_MS);
 
@@ -128,9 +116,7 @@ public abstract class Shoot3CMDWrightly extends LinearOpMode {
             }
         }
 
-        // =================================================================
-        // PHASE 4: Stop
-        // =================================================================
+        // Stop
         robot.intake.front.setPower(0);
         robot.intake.floop.setPosition(FLIPPER_STOW_POS);
         robot.shooter.setTargetVelocity(0);
@@ -153,13 +139,7 @@ public abstract class Shoot3CMDWrightly extends LinearOpMode {
      */
     public void runSubsystems() {
         robot.ll.periodic();
-
-        // --- MODIFIED: Only run the automatic command if the flag is true ---
-        if (runAutoShooterCommand) {
-            robot.shooterAutoCmd.execute();
-        }
-
-        robot.shooter.periodic(); // PID loop still needs to run to hit the target
+        robot.shooter.periodic();
         robot.turretAuto.faceAprilTag(TURRET_TOLERANCE, alliance);
     }
 }
