@@ -55,7 +55,7 @@ public class TurretAutoLLCMD {
 
                 // Send to turret (Limit to max 1.0)
                 // Note: I added a negative sign here assuming standard orientation, remove if it turns wrong way
-                turret.setPower(-power);
+                turret.setPower(-power*.25);
             } else {
                 // Inside tolerance: Stop completely
                 turret.setPower(0);
