@@ -2,7 +2,6 @@ package org.firstinspires.ftc.teamcode.DriverControl.TeleOp;
 
 import org.firstinspires.ftc.teamcode.Utils.Robot;
 import com.acmerobotics.dashboard.FtcDashboard;
-import org.firstinspires.ftc.teamcode.Utils.Alliance;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.acmerobotics.dashboard.telemetry.MultipleTelemetry;
 
